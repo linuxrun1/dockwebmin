@@ -15,7 +15,7 @@ services:
       - 80:80
     volumes:
       - root:/root
-    restart: unless-stopped
+    restart: never
 
 volumes:
   root:
