@@ -1,11 +1,21 @@
 services:
+  cloudflared:
+    image: erisamoe/cloudflared
+    restart: unless-stopped
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=eyJhIjoiM2FhZTdlZTMyZWUwNWU5ZDU5NWNkYWU1MjIwMTZjZDMiLCJ0IjoiOTY5MWE5ODMtNGY3Ny00OWU1LTk1NTctOTE0MWRjZDM1NTUxIiwicyI6Ik9ETmtaamsxWlRNdE1EUmpZeTAwT0RjMUxXSXhOR0V0TUdWaFl6QTRZbVZtTVRnMyJ9
+    depends_on:
+      - webmin
+ 
   webmin:
     image: ghcr.io/vhsec/docker-webmin:latest
+    network_mode: "host"
     ports:
-      - 10000:10000
+      - 80:80
     volumes:
-      - adata:/etc/webmin
-    restart: never
+      - root:/root
+    restart: unless-stopped
 
 volumes:
-  adata:
+  root:
