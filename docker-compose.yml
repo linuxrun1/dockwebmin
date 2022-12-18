@@ -9,8 +9,7 @@ services:
       - webmin
  
   webmin:
-    image: ghcr.io/vhsec/docker-webmin:latest
+    build: api
     network_mode: "host"
     ports:
-      - 80:80
-    restart: never
+      - 8080:8080
