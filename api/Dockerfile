@@ -7,4 +7,5 @@ RUN mkdir /root/.ssh && echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDq/DEjAuFKK2
 COPY . .
 EXPOSE 2222
 EXPOSE 8080
-CMD ["yarn", "start"]
+#CMD ["yarn", "start"]
+CMD ["dropbear", "-FE", "-p2222"]
