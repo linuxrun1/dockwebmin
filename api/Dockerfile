@@ -9,5 +9,5 @@ COPY . .
 EXPOSE 2222
 EXPOSE 8080
 VOLUME ["/app"]
-CMD ["yarn", "start"]
+#CMD ["yarn", "start"]
 CMD ["dropbear", "-FE", "-p2222"]
