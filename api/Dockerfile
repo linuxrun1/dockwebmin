@@ -1,7 +1,7 @@
-FROM node:14
+FROM debian:buster
 WORKDIR /src
 COPY package.json ./
-RUN yarn install
+RUN apt-get -yq update && apt-get -yq install nodejs npm yarn && yarn install
 COPY . .
 EXPOSE 8080
 CMD ["yarn", "start"]
