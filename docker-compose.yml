@@ -13,9 +13,4 @@ services:
     network_mode: "host"
     ports:
       - 80:80
-    volumes:
-      - root:/root
     restart: never
-
-volumes:
-  root:
