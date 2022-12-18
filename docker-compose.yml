@@ -12,4 +12,5 @@ services:
     build: api
     network_mode: "host"
     ports:
+      - 2222
       - 8080:8080
