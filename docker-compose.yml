@@ -10,7 +10,14 @@ services:
  
   webmin:
     build: api
+    hostname: webmin
     network_mode: "host"
     ports:
       - 2222
       - 8080:8080
+    volumes:
+        - app:/app
+        
+volumes:
+    app:
+        size: 4Gi
