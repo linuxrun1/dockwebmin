@@ -30,7 +30,7 @@ RUN \
     /tmp/*
 
 # add local files
-COPY /root /
+#COPY /root /
 
 EXPOSE 2222
 
